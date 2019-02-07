@@ -1,0 +1,27 @@
+public class WeatherConditionals
+{
+    private int temperature = 0;
+    private String description = "";
+    public static String getWeatherAdvice (int temperature, String description){
+       //System.out.println(WeatherConditionals.getWeatherAdvice(32, "heavy snow"));
+       //return (temperature + "degress and " +description);
+       boolean windy = false;
+       if (description == "windy" || description == "snow" || temperature<=32) return("Too windy or cold! Enjoy watching the weather through the window.");
+       else return("You can go outside!" + temperature + "°F" + "and" + description + "Enjoy the weather!");
+     }
+   //public static String Temp(int temperature){
+       // if (temperature < 28) return("Too Cold");
+        //if (temperature >28 && temperature<35) return("Chilly");
+       // if (temperature >=35) return("Nice Weather");
+        //else return ("Something has gone wrong"); 
+    // }
+    public static String getHikingAdvice(int temperature, int windchill, 
+    int humidity, String description){
+       if(temperature < 45 || temperature > 75) return ("Do not hike, the temperature is not good.");
+       else if(windchill <= 0) return("Do not hike, the windchill is too cold.");
+       else if(humidity <=20 || humidity>=60) return("Do not hike, the humidity is too high.");
+       else if(description.indexOf("tornado") != -1 || description.indexOf("storm") != -1 || description.indexOf("rain") != -1 || description.indexOf("snow") != -1 ||description.indexOf("hurricane")
+       != -1) return("Do not hike, there is poor weather conditions.");
+       else return("Great weather, have a good time hiking!");
+    }
+}
